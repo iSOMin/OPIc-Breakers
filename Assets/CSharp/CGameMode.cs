@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class CGameMode: MonoBehaviour {
 
-	//int totalBlock = 84;
+	int totalBlock = 84;
 
 	// for debug
-	int totalBlock = 2;
+	//int totalBlock = 2;
 
 	public GameObject winPanel;
 	public GameObject overPanel;
@@ -40,14 +40,14 @@ public class CGameMode: MonoBehaviour {
 		int i, j;
 
 		for (i = 0; i < 21; i++) {
-			//for (j = 1; j < 8; j++) {
-			for(j = 1; j < 2; j++){
+			for (j = 1; j < 8; j++) {
+			//for(j = 1; j < 2; j++){
 				Vector3 pos = Vector3.zero;
 				pos.x = (float)i * 0.24f - 2.4f;
 				pos.y = (float)j * 0.24f;
 
 
-				/*if (i >= 1 && i <= 5) {
+				if (i >= 1 && i <= 5) {
 					if (i == 1 && j == 1 ||
 					    i == 1 && j == 7 ||
 					    i == 5 && j == 1 ||
@@ -78,13 +78,13 @@ public class CGameMode: MonoBehaviour {
 					}
 				} else {
 					continue;
-				}*/
+				}
 
 
 				// for debug
-				if (i >= 13 && i <= 14) {
-					Instantiate (Resources.Load ("Prefabs/Block_yellow"), pos, Quaternion.identity);
-				}
+				//if (i >= 13 && i <= 14) {
+				//	Instantiate (Resources.Load ("Prefabs/Block_yellow"), pos, Quaternion.identity);
+				//}
 			}
 		}
 
