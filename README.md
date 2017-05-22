@@ -1,7 +1,7 @@
 # OPIc-Breakers
-This is my first Unity Game. <br>
+This is my first game app using Unity framework. <br>
 Basically it is brick breakers game, but I used the bricks map as characters of "OPIc". <br>
-It will be used for marketing OPIc test.<br><br>
+This App will be used for marketing OPIc test.<br><br>
 
 # Used
 * brick setting - used double for loop and contition<br>
