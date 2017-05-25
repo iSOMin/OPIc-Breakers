@@ -18,6 +18,7 @@ public class CGameMode: MonoBehaviour {
 	public GameObject retryButton;
 	public GameObject shareButton;
 	public GameObject leaderboardButton;
+	public GameObject longLeaderboardButton;
 	Timer currentScore;
 	long nowScore;
 
@@ -35,12 +36,14 @@ public class CGameMode: MonoBehaviour {
 		overPanel.SetActive (false);
 		ball = GameObject.Find ("Ball");
 		paddle = GameObject.Find ("Paddle");
-		retryButton = GameObject.Find ("RetryButton");
+		retryButton = GameObject.Find ("retryButton");
 		retryButton.SetActive (false);
-		shareButton = GameObject.Find ("ShareButton");
+		shareButton = GameObject.Find ("shareButton");
 		shareButton.SetActive (false);
-		leaderboardButton = GameObject.Find ("LeaderBoardButton");
+		leaderboardButton = GameObject.Find ("leaderboardButton");
 		leaderboardButton.SetActive (false);
+		longLeaderboardButton = GameObject.Find ("longLeaderboardButton");
+		longLeaderboardButton.SetActive (false);
 
 		Time.timeScale = 1;
 
@@ -179,5 +182,6 @@ public class CGameMode: MonoBehaviour {
 		// message on - retry, quit, back key(quit)
 		overPanel.SetActive(true);
 		retryButton.SetActive (true);
+		longLeaderboardButton.SetActive (true);
 	}
 }

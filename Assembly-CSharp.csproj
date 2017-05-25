@@ -50,15 +50,12 @@
      <Compile Include="Assets\CSharp\CBlock.cs" />
      <Compile Include="Assets\CSharp\CGameMode.cs" />
      <Compile Include="Assets\CSharp\CPlayer.cs" />
-     <Compile Include="Assets\CSharp\GameStart.cs" />
      <Compile Include="Assets\CSharp\GeneralShare.cs" />
-     <Compile Include="Assets\CSharp\LearnMore.cs" />
      <Compile Include="Assets\CSharp\MainStart.cs" />
      <Compile Include="Assets\CSharp\Restart.cs" />
      <Compile Include="Assets\CSharp\ShareManager.cs" />
      <Compile Include="Assets\CSharp\ShareScore.cs" />
      <Compile Include="Assets\CSharp\Timer.cs" />
-     <Compile Include="Assets\CSharp\goTest.cs" />
      <Compile Include="Assets\CSharp\showLeaderBoard.cs" />
      <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
      <Compile Include="Assets\GooglePlayGames\BasicApi\CommonStatusCodes.cs" />
