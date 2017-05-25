@@ -17,4 +17,13 @@ public class MainStart : MonoBehaviour {
 			}
 		}
 	}
+	/*
+	public void learnMore() {
+		Application.OpenURL ("https://www.opic.or.kr/opics/servlet/controller.opic.site.about.AboutServlet?p_process=move-page-introduce&p_nav=3_1_1");
+	}
+
+	public void goTest() {
+		Application.OpenURL ("https://www.opic.or.kr/opics/servlet/controller.opic.site.receipt.ExamReceiptServlet?p_process=select-list&p_nav=1_1");
+	}
+	*/
 }

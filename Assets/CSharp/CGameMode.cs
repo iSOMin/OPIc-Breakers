@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using GooglePlayGames;
+using UnityEngine.SocialPlatforms;
 
 public class CGameMode: MonoBehaviour {
 
 	int totalBlock = 84;
-
 	// for debug
 	//int totalBlock = 2;
 
@@ -16,9 +17,14 @@ public class CGameMode: MonoBehaviour {
 	public GameObject paddle;
 	public GameObject retryButton;
 	public GameObject shareButton;
+	public GameObject leaderboardButton;
+	Timer currentScore;
+	long nowScore;
 
 	// Use this for initialization
 	void Start () {
+		currentScore = GameObject.Find ("Timer").GetComponent<Timer> ();
+
 		// to stay "Screen ON"
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
@@ -33,6 +39,8 @@ public class CGameMode: MonoBehaviour {
 		retryButton.SetActive (false);
 		shareButton = GameObject.Find ("ShareButton");
 		shareButton.SetActive (false);
+		leaderboardButton = GameObject.Find ("LeaderBoardButton");
+		leaderboardButton.SetActive (false);
 
 		Time.timeScale = 1;
 
@@ -41,11 +49,14 @@ public class CGameMode: MonoBehaviour {
 
 		for (i = 0; i < 21; i++) {
 			for (j = 1; j < 8; j++) {
+			//for debug
 			//for(j = 1; j < 2; j++){
 				Vector3 pos = Vector3.zero;
 				pos.x = (float)i * 0.24f - 2.4f;
 				pos.y = (float)j * 0.24f;
 
+
+				//original
 
 				if (i >= 1 && i <= 5) {
 					if (i == 1 && j == 1 ||
@@ -127,6 +138,33 @@ public class CGameMode: MonoBehaviour {
 		winPanel.SetActive (true);
 		shareButton.SetActive (true);
 		retryButton.SetActive (true);
+		leaderboardButton.SetActive (true);
+
+		Social.localUser.Authenticate((result, errorMessage) => {
+			if (result) {
+				// 인증 성공
+				Debug.Log("login Success");
+				nowScore = (long)currentScore.time;
+				Social.ReportScore(nowScore - 1, "CgkIpK7Q68AcEAIQCQ", (bool success) =>{
+					//handle success or failure
+					if (success)
+					{
+						// 인증 성공
+						Debug.Log("score Success");
+					}
+					else
+					{
+						// 인증 실패
+						Debug.Log("score Failure");
+					}
+				});
+			} else {
+				// 인증 실패
+				Debug.Log("login Failure");
+			}
+		});
+
+
 	}
 
 	/**

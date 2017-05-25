@@ -12,7 +12,7 @@ public class Timer : MonoBehaviour {
 
 	void Start () {
 		time = 10000f;
-		//time = 100f;
+		//time = 1000f;
 		gameController = GameObject.Find ("floor");
 		gameOverFlag = false;
 	}
