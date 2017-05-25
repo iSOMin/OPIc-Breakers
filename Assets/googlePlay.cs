@@ -6,15 +6,25 @@ using UnityEngine.SocialPlatforms;
 
 public class googlePlay : MonoBehaviour {
 
+	public GameObject loginAgainButton;
+	public GameObject loginSuccessButton;
+
 	// Use this for initialization
 	void Start () {
+		loginAgainButton = GameObject.Find ("login");
+		loginSuccessButton = GameObject.Find ("loginSuccess");
+		loginSuccessButton.SetActive (false);
+
 		PlayGamesPlatform.Activate ();
 
-		Social.localUser.Authenticate((result, errorMessage) => {
-			if (result)
+		//Social.localUser.Authenticate((result, errorMessage) => {
+		Social.localUser.Authenticate((bool success) => {
+			//if (result)
+			if (success)
 			{
 				// 인증 성공
 				Debug.Log("login Success");
+				loginSuccessButton.SetActive(true);
 			}
 			else
 			{
